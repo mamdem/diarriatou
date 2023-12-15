@@ -7,7 +7,9 @@
     tools:context=".Start"
     android:orientation="vertical"
     android:gravity="center"
-    android:layout_gravity="center">
+    android:layout_gravity="center"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp">
 
     <Button
         android:id="@+id/login"

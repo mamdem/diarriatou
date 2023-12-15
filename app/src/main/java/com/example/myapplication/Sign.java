@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -73,9 +74,10 @@ public class Sign extends AppCompatActivity {
         values.put(DatabaseHelper.COLUMN_USERNAME, username);
         values.put(DatabaseHelper.COLUMN_PASSWORD, password);
 
-        long newRowId = db.insert(DatabaseHelper.TABLE_NAME, null, values);
+        long newRowId = db.insert(DatabaseHelper.TABLE_USERS, null, values);
         // Vous pouvez ajouter ici du code pour gérer l'utilisateur nouvellement inscrit
         Toast.makeText(getApplicationContext(), "Inscription reussi", Toast.LENGTH_LONG).show();
+        startActivity(new Intent(getApplicationContext(), Login.class));
         hideLoadingDialog();
     }
 
